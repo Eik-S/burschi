@@ -1,13 +1,21 @@
 import urllib.request
 from bs4 import BeautifulSoup
 
-burschisUrl = "http://www.burschenschaft.de/burschenschaft-in-deutschland-und-oesterreich.html"
-burschisWikiUrl = "www.de.wikipedia.org/wiki/Liste_der_Burschenschaften"
-req = urllib.request.Request(burschisUrl)
+baseUrl = 'http://www.burschenschaft.de/'
+domain = 'burschenschaft-in-deutschland-und-oesterreich.html'
+
+req = urllib.request.Request(baseUrl + domain)
 with urllib.request.urlopen(req) as response:
-   html = response.read()
-  
+    html = response.read()
 
 soup = BeautifulSoup(html, 'html.parser')
 
-print(soup.prettify())
+cityPages = []
+
+for link in soup.find_all('a', attrs={'class': 'list-group-item'}):
+    href = link['href']
+    print(href)
+    req = urllib.request.Request(baseUrl + href)
+    with urllib.request.urlopen(req) as response:
+        cityPages.append(response.read)
+print(cityPages)
