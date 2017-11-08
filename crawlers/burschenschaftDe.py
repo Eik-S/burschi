@@ -1,18 +1,13 @@
-import requests
+import urllib.request
 from bs4 import BeautifulSoup
 
 burschisUrl = "http://www.burschenschaft.de/burschenschaft-in-deutschland-und-oesterreich.html"
 burschisWikiUrl = "www.de.wikipedia.org/wiki/Liste_der_Burschenschaften"
-
-data = requests.get( burschisUrl, stream=True)
-
-result = "";
-
-for line in data.iter_lines():
-  if line: 
-    result += line;
+req = urllib.request.Request(burschisUrl)
+with urllib.request.urlopen(req) as response:
+   html = response.read()
   
 
-soup = BeautifulSoup( result, 'html.parser')
+soup = BeautifulSoup(html, 'html.parser')
 
-print soup.
+print(soup.prettify())
