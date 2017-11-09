@@ -17,6 +17,9 @@ for row in rows:
   if( row.find('span')):
     burschis.append(row)
 
-print( burschis[0].prettify())
+for burschi in burschis:
+  print( burschi.prettify())
+  data = burschi.find_all('td')
+  for index, line in enumerate(data):
+    print( str(index) + "   " + str(line.find(text=True, recursive=False)))
 
-print( len(burschis));
