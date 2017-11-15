@@ -18,4 +18,8 @@ for link in soup.find_all('a', attrs={'class': 'list-group-item'}):
     req = urllib.request.Request(baseUrl + href)
     with urllib.request.urlopen(req) as response:
         cityPages.append(response.read)
-print(cityPages)
+
+
+
+
+
