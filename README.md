@@ -1,2 +1,2 @@
 # burschi
-Visually displayed data of german burschenschaften hallo
+Visually displayed data of german burschenschaften
