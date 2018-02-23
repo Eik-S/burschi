@@ -68,6 +68,3 @@ def get_burschi_info():
             burschi_infos.extend(city_info)
     burschis_json = json.dumps( burschi_infos, indent=2)
     return burschis_json
-
-
-print( get_burschi_info())

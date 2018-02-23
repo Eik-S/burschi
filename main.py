@@ -1,4 +1,10 @@
-#TODO: Run crawlers and export json file.
-import parser
+import crawlers.burschenschaftDe as burschiDeCrawler
+import crawlers.webLinks as webLinksCrawler
 
-parser.addElement( 'Foo')
+burschis = burschiDeCrawler.get_burschi_info()
+for burschi in burschis:
+    url = burschi.web_link
+    page_links = webLinksCrawler.get_external_links()
+    burschi["page_links"] = page_links
+
+print( burschis)
