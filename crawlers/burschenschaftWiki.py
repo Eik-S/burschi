@@ -83,4 +83,4 @@ for baseIndex, burschi in enumerate(burschis):
       dictPos['status'] = text
 
   print( "\n\n\n")
-print( json.dumps(burschiDict, indent=4, ensure_ascii=False))
+print( "%s \n %s" % (json.dumps(burschiDict, indent=4, ensure_ascii=False),10) )
