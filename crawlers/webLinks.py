@@ -1,8 +1,13 @@
 import urllib.request
 import json
 from bs4 import BeautifulSoup
+import ssl
 
 def get_external_links(input_url):
+
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
 
     int_links = set()
     int_links_checked = set()
@@ -18,11 +23,13 @@ def get_external_links(input_url):
         #}
     ]
 
-    def navigate(url):
+    def get_next_html(url):
         #TODO: Navigate to next subpage and return html_doc
         int_links.remove(url)
+        req = urllib.request.Request(url)
         int_links_checked.add(url)
-        return 'bar'
+        with urllib.request.urlopen( req, context=ctx) as response:
+            return response.read
 
     def get_links(html_doc):
         #TODO: get all links and return them as a list
@@ -40,6 +47,7 @@ def get_external_links(input_url):
         # 2. add ext_links & int_links to their sets
         # (if ext_links already contains dict with link = some_ext_link, 
         #   increment count)
+        return "bar"
     return ext_links
 
     #issues could be:
