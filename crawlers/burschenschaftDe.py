@@ -1,6 +1,7 @@
 import urllib.request
 import json
 from bs4 import BeautifulSoup
+import ssl
 
 def get_burschi_info():
 
@@ -8,10 +9,14 @@ def get_burschi_info():
     # took the hannover subpage because at the main page, the list is present twice
     domain = 'burschenschaft-in-deutschland-und-oesterreich/hannover.html'
 
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
     # returns the html string of an url
     def get_html(url):
         req = urllib.request.Request(url)
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, context=ctx) as response:
             return response.read()
 
     # returns a list of the subpages for the different citys
@@ -66,5 +71,4 @@ def get_burschi_info():
         city_info = get_data_from_subpage(subpage_html)
         if city_info:
             burschi_infos.extend(city_info)
-    burschis_json = json.dumps( burschi_infos, indent=2)
-    return burschis_json
+    return burschi_infos
