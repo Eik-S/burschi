@@ -9,6 +9,8 @@ def get_external_links(input_url):
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
 
+
+ test = 1
     int_links = set()
     int_links_checked = set()
     ext_links = [
