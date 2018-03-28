@@ -16,14 +16,15 @@ The javascript library [d3js](https://d3js.org/) is used for the network visuali
     "external_links": [
       {
         "link":"<external url at this burschenschafts website>",
-        "count":<how many times this exact link exists on the website>
+        "count": 9
       },
-      ...
+      {...}
     ]
   },
-  ...
+  {...}
 ]
 ```
+`"count"`: number of times the link exists on the whole website
 
 After creating a javascript list containing this data, the network graph data is created by:
 
