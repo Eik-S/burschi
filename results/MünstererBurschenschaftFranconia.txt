@@ -1,1 +1,1 @@
-[]
+[{"link": "http://www.muenster.de", "count": 1}, {"link": "http://www.uni-muenster.de", "count": 1}, {"link": "http://www.fh-muenster.de", "count": 1}, {"link": "http://www.libertas-wien.at", "count": 1}, {"link": "http://www.bcb.cl", "count": 1}]

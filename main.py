@@ -13,9 +13,6 @@ for burschi in burschis:
     url = burschi["web_link"]
     page_links = webLinksCrawler.get_external_links(url)
     print("%s. %s links added for %s" % (i,len(page_links), url))
-    if len(page_links) > 0:
-        #add dicts with ext links to list or increment count
-        name = burschi["name"].replace(" ","")
-        filename = "./results/%s.txt" % name
-        with open(filename, 'w') as out:
-            out.write(json.dumps(page_links))
+    burschi["external_links"] = page_links
+with open("burschis.json", 'w') as out:
+    out.write(json.dumps(burschis))

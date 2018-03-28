@@ -2,6 +2,9 @@ import urllib.request
 import json
 from bs4 import BeautifulSoup
 import ssl
+import warnings
+
+warnings.filterwarnings("ignore")
 
 def get_burschi_info():
 
