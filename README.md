@@ -32,51 +32,50 @@ After creating a javascript list containing this data, the network graph data is
 
 1. Iterating through each dictionary and creating a **node** object for each burschenschaft and saving:
 
-**node**
-```javascript
-let node = {
-  'id':1, //unique id for each node
-  'group':0,
-  'name': 'foo',
-  'web_link': 'http://foo-website.de',
-  'external_links':[{...},{...}]
-}
-```
+        ```javascript
+        let node = {
+          'id':1, //unique id for each node
+          'group':0,
+          'name': 'foo',
+          'web_link': 'http://foo-website.de',
+          'external_links':[{...},{...}]
+        }
+        ```
 
 
 2. Adding each node to a **nodes** dictionary, using the urls base as its key:
 
-```javascript
-let nodes = {
-  'foo-website': {...},
-  'bar-website': {...}
-}
-```
+        ```javascript
+        let nodes = {
+          'foo-website': {...},
+          'bar-website': {...}
+        }
+        ```
 
 
 3. Iterating through all **external_links** inside each dictionary and creating a **link** object for each of them:
 
-```javascript
-let link = {
-  'source': 1, //the id value of the parent burschenschaft node
-  'count': 3,
-  'target': 9, // the id of this external node 
-}
-```
-This link is added to a list of **links**
+        ```javascript
+        let link = {
+          'source': 1, //the id value of the parent burschenschaft node
+          'count': 3,
+          'target': 9, // the id of this external node 
+        }
+        ```
+    This link is added to a list of **links**
 
 4. If the external node identified by its url base is not found in **nodes**, its created before the links `'target':9` key/value pair is added:
 
-```javascript
-let externalNode = {
-  'id':9, //same unique id space as burschenschaft nodes
-  'group':1,
-  'web_link': 'http://foo-website.de',
-  'base_link': 'www.wikipedia.de', //base link, unlike base, contains at least the websites tld
-  'in_degree': 0 //used to identify number of burschenschaft nodes linking to this external one
-}
-```
-This node is also added to the **nodes** dictionary with using the web_links base as a key.
+        ```javascript
+        let externalNode = {
+          'id':9, //same unique id space as burschenschaft nodes
+          'group':1,
+          'web_link': 'http://foo-website.de',
+          'base_link': 'www.wikipedia.de', //base link, unlike base, contains at least the websites tld
+          'in_degree': 0 //used to identify number of burschenschaft nodes linking to this external one
+        }
+        ```
+    This node is also added to the **nodes** dictionary with using the web_links base as a key.
 
 5. The `'in_degree'` of the target node is incremented by 1. 
 
