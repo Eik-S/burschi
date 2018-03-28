@@ -44,7 +44,7 @@ let node = {
 ```
 
 
-1. Adding each node to a **nodes** dictionary, using the urls base as its key:
+2. Adding each node to a **nodes** dictionary, using the urls base as its key:
 
 ```javascript
 let nodes = {
@@ -54,7 +54,7 @@ let nodes = {
 ```
 
 
-1. Iterating through all **external_links** inside each dictionary and creating a **link** object for each of them:
+3. Iterating through all **external_links** inside each dictionary and creating a **link** object for each of them:
 
 ```javascript
 let link = {
@@ -65,7 +65,7 @@ let link = {
 ```
 This link is added to a list of **links**
 
-1. If the external node identified by its url base is not found in **nodes**, its created before the links `'target':9` key/value pair is added:
+4. If the external node identified by its url base is not found in **nodes**, its created before the links `'target':9` key/value pair is added:
 
 ```javascript
 let externalNode = {
@@ -78,15 +78,15 @@ let externalNode = {
 ```
 This node is also added to the **nodes** dictionary with using the web_links base as a key.
 
-1. The `'in_degree'` of the target node is incremented by 1. 
+5. The `'in_degree'` of the target node is incremented by 1. 
 
-1. The Value of each key in **nodes={}** is added to the list **nodes=[]**
+6. The Value of each key in **nodes={}** is added to the list **nodes=[]**
 
-1. All nodes having an `'in_degree'` of just 1 are removed from this list. This is done to reduce the complexity of the resulting network graph.
+7. All nodes having an `'in_degree'` of just 1 are removed from this list. This is done to reduce the complexity of the resulting network graph.
 
-1. All links connected to the removed nodes are also deleted.
+8. All links connected to the removed nodes are also deleted.
 
-1. The resulting **graphData** dictionary, containing the **nodes** list and **links** list is added to the [d3Component](/burschi-app/src/app/d3.component.ts).
+9. The resulting **graphData** dictionary, containing the **nodes** list and **links** list is added to the [d3Component](/burschi-app/src/app/d3.component.ts).
 
 ### Data Visualisation
 
