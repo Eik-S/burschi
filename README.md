@@ -18,10 +18,12 @@ The javascript library [d3js](https://d3js.org/) is used for the network visuali
         "link":"<external url at this burschenschafts website>",
         "count": 9
       },
-      {...}
+      {},
+      {}
     ]
   },
-  {...}
+  {},
+  {}
 ]
 ```
 `"count"`: number of times the link exists on the whole website
