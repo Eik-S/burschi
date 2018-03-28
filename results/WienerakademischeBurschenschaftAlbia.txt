@@ -1,1 +1,1 @@
-[]
+[{"link": "http://www.arminia-graz.at", "count": 18}, {"link": "https://de.wikipedia.org/wiki/Burschenschaft_Teutonia_Prag", "count": 9}, {"link": "http://www.cimbria.de/", "count": 9}, {"link": "http://www.burschenschaft.de/", "count": 9}, {"link": "http://www.oepr.at/", "count": 9}, {"link": "http://www.teutonia-prag.de", "count": 9}, {"link": "https://de.wikipedia.org/wiki/Wiener_akademische_Burschenschaft_Albia", "count": 9}, {"link": "http://www.burschenschaft.de/burschenschaft-was-ist-das/geschichte-tradition/burschenschaftliche-geschichte.html", "count": 9}]

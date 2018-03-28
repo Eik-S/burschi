@@ -1,0 +1,30 @@
+<mat-sidenav-container class="info-panel mat-typography" mat-app-background>
+        <h2>The Graph</h2>
+        <ol>
+        <li>We extracted all the links to Burschenschaften from <a href="https://www.burschenschaft.de/">burschenschaft.de</a>.</li>
+        <li>We looked up all the links on each website which route to another domain.</li>
+        <li>We added directed links if the source page has a link to the target page.</li>
+        </ol>
+        <p>We exclude all external nodes which have just one connection from the visualisation.</p>
+        <p>Nodes are scaled by their degree in the network.</p>
+        <mat-divider></mat-divider>
+        <h2>Graph Elements</h2>
+        <div class="color-tip">
+            <svg>
+                <circle cx="8" cy="8" r="8" fill="rgb(151,41,255)" stroke="rgb(151,41,255)"></circle>
+            </svg>
+            <p>Burschenschaften</p>
+        </div>
+        <div class="color-tip">
+            <svg>
+                <circle cx="8" cy="8" r="8" fill="rgb(29,161,242)" stroke="rgb(29,161,242)"></circle>
+            </svg>
+            <p>External Links</p>
+        </div>
+        <mat-divider></mat-divider>
+        <h2>How To Use</h2>
+        <ul>
+            <li>Hover a node to highlight their neighbourhood.</li>
+            <li>Click a node to visit the according website</li>
+        </ul>
+</mat-sidenav-container>

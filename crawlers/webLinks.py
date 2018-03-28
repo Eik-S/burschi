@@ -86,9 +86,17 @@ def get_external_links(input_url):
         link_list = get_links(html_doc)
         if link_list == None:
             continue
-        for l in link_list:
+        for l in link_list: 
             if l.startswith('http://') or l.startswith('https://') or l.startswith('www.'):
                 if parent_domain not in l:
+                    check = False
+                    for dict in ext_links:
+                        if dict['link'] == l:
+                            dict['count'] += 1
+                            check = True
+                    if not check:
+                        ext_links.append({'link': l, 'count': 1})
+                elif (l.count('http://') + l.count('https://')) > 1 or l.count('www.') > 1:
                     check = False
                     for dict in ext_links:
                         if dict['link'] == l:
