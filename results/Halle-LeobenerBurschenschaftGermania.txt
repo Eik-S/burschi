@@ -1,0 +1,1 @@
+[{"link": "http://www.burschenschaftliche-blaetter.de/netzversion/detailansicht/browse/1/meldung/395/wider-die-r.html", "count": 1}, {"link": "http://www.burschenschaft.de/", "count": 3}, {"link": "http://www.facebook.com/Burschenschaft.Halle", "count": 1}, {"link": "https://www.joomla.org/", "count": 1}, {"link": "http://www.halle.de", "count": 1}]

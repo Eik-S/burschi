@@ -1,0 +1,22 @@
+.info-panel {
+    padding: 10px;
+
+    a {
+        color: #fff;
+    }
+
+    .color-tip {
+        justify: center;
+        svg {
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+        }
+        p {
+            display: inline-block;
+            width: 150px;
+            margin-top: -4px;
+            vertical-align: middle;
+        }
+    }
+}

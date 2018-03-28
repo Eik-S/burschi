@@ -1,0 +1,1 @@
+[{"link": "http://trade.domainname.de/contact", "count": 1}, {"link": "http://trade.domainname.de/faqs", "count": 1}]
